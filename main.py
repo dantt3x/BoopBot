@@ -41,9 +41,12 @@ async def on_message(message):
     if contents == "jacob":
         await message.channel.send("https://tenor.com/view/jacob-gif-1687100335585512029")
     if contents == "nick":
-        await message.channel.send("https://tenor.com/view/nikocado-avocado-rage-angry-gif-23510601")
+        await message.channel.send("https://media.discordapp.net/attachments/495286269459300364/1017645613971685506/2E2C5956-0C49-40AC-BDF7-C8FCCAC16E18.gif")
     if contents == "marcos" or contents == "marc":
         await message.channel.send("https://media.discordapp.net/attachments/1092111312529653933/1111734848483233943/attachment-3.gif")
+    if contents == "joseph":
+        await message.channel.send("https://media.discordapp.net/attachments/470168157148020756/1069459474840035398/RDT_20230129_1856533783651655226913782.gif")
+        
         
     await bot.process_commands(message)
     
