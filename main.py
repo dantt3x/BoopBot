@@ -1,20 +1,24 @@
-if __name__ == "__main__":
-    from test import a_test_function
-    print("init")
-    a_test_function()
+import config
+import keywords
+import commands
 
-@boopbot.bot.event
+if __name__ == "__main__":
+    config.initialize()
+
+
+@config.bot.event
 async def on_ready():
     print("BoopBot is ready to run.")
     print("------------------------")
+    await config.bot.add_cog(commands.Liberal(config.bot))
 
-@boopbot.bot.event
+@config.bot.event
 async def on_message(message):  
     
     if message.author.bot:
         return
-    if check_for_keywords(message) == 1:
-        return
-    await bot.process_commands(message)
+   
+    await keywords.check_for_keywords(message)
+    await config.bot.process_commands(message)
 
-bot.run('MTE3NDA3MTE3NDMwMTQ5MTMxMA.GmmgAa.lpEwcfOu2bazwuRCkpWZ0LbLYiIE5gtulc6PAw')
+config.bot.run('MTE3NDA3MTE3NDMwMTQ5MTMxMA.GmmgAa.lpEwcfOu2bazwuRCkpWZ0LbLYiIE5gtulc6PAw')
